@@ -35,19 +35,6 @@ public class PilhaDinamica<T> {
 			return noReturn.getValor();
 		}
 	}
-	public static void main(String[] args) throws Exception {
-		PilhaDinamica<Integer> pilhaD = new PilhaDinamica<Integer>();
-		pilhaD.push(5);
-		pilhaD.push(4);
-		pilhaD.push(3);
-		pilhaD.push(2);
-		pilhaD.push(1);
-		pilhaD.push(9);
-		
-		while(!pilhaD.isEmpty()) {
-			System.out.println(pilhaD.pop());
-		}
-	
-	}
+
 
 }
