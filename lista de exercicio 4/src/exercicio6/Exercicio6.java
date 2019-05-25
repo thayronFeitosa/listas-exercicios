@@ -10,7 +10,7 @@ import exercicio1.Pilha;
  */
 public class Exercicio6 {
 
-	public void converterDecinalEmBinario(int numero) {
+	public void converterDecinalEmBinario(int numero) throws Exception {
 		int valor = +numero;
 		Pilha pilha = new Pilha(tamanhoDaPilha(numero));
 		boolean status = false;
@@ -51,7 +51,7 @@ public class Exercicio6 {
 		return cont;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("digite um numero decimal para a converção em binario: ");
 		int numero = scan.nextInt();

@@ -13,7 +13,7 @@ import exercicio1.Pilha;
 
 public class Exercico4 {
 	
-	public Pilha inverterPosicaoDaPilha(Pilha p1) {
+	public Pilha inverterPosicaoDaPilha(Pilha p1) throws Exception {
 		
 		Pilha pilhaAux = new Pilha(p1.length());
 		

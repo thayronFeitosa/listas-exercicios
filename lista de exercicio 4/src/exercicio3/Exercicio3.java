@@ -14,7 +14,7 @@ import exercicio1.Pilha;
  */
 public class Exercicio3 {
 
-	public boolean PilhaEquals(Pilha P1, Pilha P2) {
+	public boolean PilhaEquals(Pilha P1, Pilha P2) throws Exception {
 
 		int[] P1Aux = new int[P1.length()];
 		int[] P2Aux = new int[P2.length()];

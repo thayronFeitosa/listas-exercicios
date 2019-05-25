@@ -1,44 +1,65 @@
 package exercicio1;
 
 public class Pilha {
-	private int []pilha;
+	private int[] stack;
 	private int top;
-	private int max;
-	
-	public Pilha(int tamanho) {
-		this.pilha = new int[tamanho];
-		
-		this.top =-1;
-		this.max = tamanho;
+
+	public Pilha(int size) {
+		this.stack = new int[size];
+		this.top = -1;
 	}
-	public boolean isFull() {
-		return this.top ==this.max;
+
+	public boolean isfull() {
+		return this.top == this.stack.length - 1;
 	}
+
 	public boolean isEmpty() {
-		return this.top ==-1;
+		return this.top == -1;
 	}
-	
-	public void push(int valor) {
-		if (isFull()) {
-			System.out.println("A pilha está cheia");
-			return;
-		}else {
-			this.top++;
-			this.pilha[top] = valor;
+
+	public void push(int value) throws Exception {
+		if (isfull()) {
+			throw new Exception("the stack is full");
 		}
-	}
-	
-	public int pop() {
 		if (isEmpty()) {
-			throw new StackOverflowError("PILHA ESTA VAZIA");
+			this.top++;
+			this.stack[top] = value;
+		} else {
+			this.top++;
+			this.stack[top] = value;
 		}
-		return pilha[top--];
 	}
-	
+
+	public int pop() throws Exception {
+		if (isEmpty()) {
+			throw new Exception("the stack is empty");
+		} else {
+			int aux = stack[top];
+			top--;
+			return aux;
+		}
+	}
+
+	public void order() {
+		int aux = 0;
+		for (int i = 0; i < stack.length; i++) {
+			for (int j = 0; j < stack.length; j++) {
+				if (stack[i] < stack[j]) {
+
+					aux = stack[i];
+					stack[i] = stack[j];
+					stack[j] = aux;
+				}
+			}
+		}
+
+	}
+
 	public int length() {
-		return max;
+		return this.stack.length;
 	}
-	
-	
+
+	public static void main(String[] args) throws Exception {
+	}
 
 }

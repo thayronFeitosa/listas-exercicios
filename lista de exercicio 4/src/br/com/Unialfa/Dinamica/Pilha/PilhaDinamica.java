@@ -1,42 +1,53 @@
 package br.com.Unialfa.Dinamica.Pilha;
 
-public class PilhaDinamica {
-	private No top;
+import java.util.EmptyStackException;
+
+public class PilhaDinamica<T> {
+	private No<T> topo;
+	private int tamanho;
 	
 	
 	public PilhaDinamica() {
-		top =null;
+		this.topo = new No<T>();
+		this.tamanho =0;
 	}
 	
-	public void push(int elemento) {
-		No newPilha = new No();
-		newPilha.setElemento(elemento);
-		newPilha.setProximo(top);
-		
-		top = newPilha;
+	public void push(T valor) {
+	No<T> novoNo = new No<T>();
+	novoNo.setValor(valor);
+	novoNo.setNoProximo(this.topo.getNoProximo());
+	this.topo.setNoProximo(novoNo);
+	tamanho++;
 	}
 	
-	public int pop() {
-		int elemento = top.getElemento();
-		top = top.getProximo();
-		return elemento;
-		
-	}
+	
 	public boolean isEmpty() {
-		return top == null;
+		return tamanho == 0;
 	}
-	public void push(String elemento) {
-		No newPilha = new No();
-		newPilha.setElemento(elemento);
-		newPilha.setProximo(top);
+
+	public T pop() throws Exception {
+		if (isEmpty()) {
+			throw new EmptyStackException();
+		}else {
+			No<T> noReturn = topo.getNoProximo();
+			topo.setNoProximo(noReturn.getNoProximo());
+			tamanho--;
+			return noReturn.getValor();
+		}
+	}
+	public static void main(String[] args) throws Exception {
+		PilhaDinamica<Integer> pilhaD = new PilhaDinamica<Integer>();
+		pilhaD.push(5);
+		pilhaD.push(4);
+		pilhaD.push(3);
+		pilhaD.push(2);
+		pilhaD.push(1);
+		pilhaD.push(9);
 		
-		top = newPilha;
+		while(!pilhaD.isEmpty()) {
+			System.out.println(pilhaD.pop());
+		}
+	
 	}
-	public void push(char elemento) {
-		No newPilha = new No();
-		newPilha.setElemento(elemento);
-		newPilha.setProximo(top);
-		
-		top = newPilha;
-	}
+
 }

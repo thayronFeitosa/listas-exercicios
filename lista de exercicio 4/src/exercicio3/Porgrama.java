@@ -3,7 +3,7 @@ package exercicio3;
 import exercicio1.Pilha;
 
 public class Porgrama {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Pilha P1 = new Pilha(2);
 		Pilha P2 = new Pilha(2);
 		P1.push(2);

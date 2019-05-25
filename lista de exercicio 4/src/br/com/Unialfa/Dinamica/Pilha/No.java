@@ -1,35 +1,30 @@
 package br.com.Unialfa.Dinamica.Pilha;
 
-public class No {
-	
-	private int elemento;
-	@SuppressWarnings("unused")
-	private String elemento1;
-	@SuppressWarnings("unused")
-	private char elemento2;
 
-	private No proximo;
-	
-	public void setElemento(int elemento) {
-		this.elemento = elemento;
+
+public class No<T> {
+	private No<T> proximo;
+	private T valor;
+
+	public void create(T valor) {
+		this.valor = valor;
+		this.proximo = new No<T>();
 	}
-	public int getElemento() {
-		return elemento;
-	}
-	public void setProximo(No proximo) {
+
+	public void setNoProximo(No<T> proximo) {
 		this.proximo = proximo;
 	}
-	public No getProximo() {
+
+	public No<T> getNoProximo() {
 		return proximo;
 	}
-	public void setElemento(String elemento) {
-		this.elemento1 = elemento;
+
+	public void setValor(T valor) {
+		this.valor = valor;
 	}
-	public void setElemento(char elemento) {
-		this.elemento2 = elemento;
+
+	public T getValor() {
+		return valor;
 	}
-	
-	
-	
 
 }

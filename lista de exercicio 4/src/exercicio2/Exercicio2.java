@@ -12,7 +12,7 @@ import exercicio1.Pilha;
  */
 public class Exercicio2 {
 
-	public Pilha transferrirElementosPilha(Pilha pilha1) {
+	public Pilha transferrirElementosPilha(Pilha pilha1) throws Exception {
 		int aux[] = new int[pilha1.length()];
 		int a = 0;
 		Pilha pilhaCopia = new Pilha(pilha1.length());
@@ -36,7 +36,7 @@ public class Exercicio2 {
 		return pilhaCopia;
 	}
 
-	public void VerPilha(Pilha pilha) {
+	public void VerPilha(Pilha pilha) throws Exception {
 		while (!pilha.isEmpty()) {
 			int a = pilha.pop();
 			System.out.println(+a);

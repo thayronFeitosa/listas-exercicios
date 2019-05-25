@@ -4,7 +4,7 @@ package exercicio2;
 import exercicio1.Pilha;
 
 public class Programa {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Exercicio2 exercicio2 = new Exercicio2();
 		Pilha pilha1 = new Pilha(5);
